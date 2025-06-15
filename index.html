@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>To Do List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap 5 CDN -->
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <script src="bootstrap.bundle.min.js"></script>
+    <style>
+      #taskList {
+        max-height: 180px; /* Adjust this value to fit 3 tasks (3 x ~60px) */
+        overflow-y: auto;
+        padding-right: 5px; /* Optional: space for scrollbar */
+        scrollbar-width: thin;
+        scrollbar-color: #2e5cff #222;
+      }
+      #taskList::-webkit-scrollbar-button {
+        background: transparent;
+        height: 0;
+        width: 0;
+      }
+      body {
+        background: #ffe4b5;
+      }
+      .todo-container {
+        max-width: 700px; /* Increased from 400px */
+        min-width: 350px; /* Optional: ensures it doesn't get too small */
+        margin: 60px auto; /* More space from top */
+        border-radius: 24px;
+        border: 3px solid #2e5cff;
+        background: #222;
+        color: #fff;
+        box-shadow: 0 0 20px #0003;
+        padding: 3rem 2.5rem; /* Increased padding */
+        font-size: 1.2rem; /* Slightly larger text */
+      }
+      .list-group-item {
+        background: #222;
+        color: #fff;
+        border: 1px solid #888;
+        margin-bottom: 10px;
+        border-radius: 8px;
+      }
+      .list-group-item.completed {
+        opacity: 0.6;
+        text-decoration: line-through;
+      }
+      .btn-link {
+        text-decoration: none;
+      }
+      .btn-edit,
+      .btn-delete {
+        color: #ff4d4f;
+        font-weight: 500;
+        margin-left: 10px;
+      }
+      .btn-edit:hover,
+      .btn-delete:hover {
+        color: #fff;
+        background: #ff4d4f;
+        border-radius: 4px;
+      }
+      .form-control:focus {
+        box-shadow: none;
+        border-color: #2e5cff;
+      }
+      .btn-primary {
+        background: #2e5cff;
+        border: none;
+      }
+      .btn-primary:hover {
+        background: #1a3ca6;
+      }
+      .border-top {
+        border-top: 2px solid #2e5cff !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="todo-container">
+      <h2 class="text-center fw-bold mb-4">To Do List</h2>
+      <div class="d-flex mb-3">
+        <input
+          id="add"
+          type="text"
+          class="form-control me-2"
+          placeholder="Add a task"
+        />
+        <button class="btn btn-primary" onclick="addTask()">Add</button>
+      </div>
+      <h5 class="text-center mb-3">Task List</h5>
+      <ul id="taskList" class="list-group mb-3"></ul>
+      <div id="taskCount" class="text-center border-top pt-2 mt-2">
+        Completed: 0 | Incomplete: 0
+      </div>
+    </div>
+    <script src="myscript.js"></script>
+  </body>
+</html>
